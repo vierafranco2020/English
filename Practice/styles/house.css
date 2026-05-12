@@ -1,0 +1,57 @@
+body {
+  font-family: sans-serif;
+  background: #eef;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.house table {
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 1000px;
+}
+
+td {
+  border: 1px solid #ccc;
+  width: 20%;
+  height: 160px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.room {
+  padding: 0.5rem;
+}
+
+.room img {
+  width: 100px;
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+.roof {
+  background: #a00;
+  color: white;
+  font-weight: bold;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.basement {
+  background: #444;
+  color: white;
+  font-weight: bold;
+}
+
+.label {
+  text-align: center;
+  font-weight: bold;
+  background-color: #ddd;
+  height: 40px;
+  font-size: 1.2rem;
+}

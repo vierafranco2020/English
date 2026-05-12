@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+.pizarra {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    cursor: text;
+}
+
+.texto {
+    position: absolute;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+#borrar {
+    position: absolute;
+    font-size: 1em;
+    font-weight: 600;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #ff2222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#borrar:hover {
+    background-color: #ff3333;
+}

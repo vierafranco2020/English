@@ -1,0 +1,96 @@
+/* Fuente general del sitio */
+*{
+  letter-spacing: 2px;
+  box-sizing: border-box; /* Asegura que padding no sume al ancho total */
+}
+body {
+  font-family: "Verdana", sans-serif;
+  color: #000;
+  background-color: #f7f7f7;
+  line-height: 2; /* <--- Aumenta el espacio entre líneas */
+}
+
+#card-cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Estilo general para cada card */
+.card {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 1.2em;
+  color: #222; /* Texto más suave para una mejor lectura */
+  margin: 5px;
+  border-radius: 10px;
+  width: max-content;
+  max-width: 90vw;
+  text-align: center;
+  border: 1px solid #ddd; /* Borde más suave */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de transición */
+}
+.info-cnt {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive: 1 a 3 columnas */
+  gap: 10px;
+  padding: 10px;
+  max-width: 100%; /* No sobresale del body */
+  box-sizing: border-box; /* Asegura que padding no sume al ancho total */
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+/* Estilo para los círculos de los ojos */
+.eye_circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0; /* Para darle algo de espacio entre la imagen y el círculo */
+  vertical-align: middle; /* Alinea la imagen con el texto */
+}
+/* Estilo de la imagen de los ojos */
+.card img {
+  margin-right: 10px; /* Espacio entre la imagen y el círculo */
+  vertical-align: middle; /* Alinea la imagen con el texto */
+}
+/* Estilo para el contenedor principal de las cards */
+
+button {
+  background-color: #4caf50; /* Verde suave */
+  width: max-content;
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Espaciado interno */
+  margin: 5px;
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por el botón */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación suave */
+}
+button:hover {
+  background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+button:active {
+  background-color: #3e8e41; /* Verde más oscuro al hacer clic */
+  transform: scale(0.98); /* Reduce ligeramente el tamaño */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más pequeña */
+}
+@media (min-width: 700px) {
+  /* estilos para tablets, laptops y escritorio */
+  .info-cnt {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+li{
+  list-style: none;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="borrar">Borrar</div>
+    <div class="pizarra" id="pizarra"></div>
+
+    <script>
+        let textoActual = null;
+        const pizarra = document.getElementById('pizarra');
+
+        function manejarClick(event) {
+            const x = event.clientX - pizarra.getBoundingClientRect().left;
+            const y = event.clientY - pizarra.getBoundingClientRect().top;
+
+            const nuevoTexto = document.createElement('div');
+            nuevoTexto.className = 'texto';
+            nuevoTexto.style.left = `${x}px`;
+            nuevoTexto.style.top = `${y}px`;
+            nuevoTexto.innerHTML = '';
+            pizarra.appendChild(nuevoTexto);
+
+            textoActual = nuevoTexto;
+        }
+
+        function manejarTecla(event) {
+            if (textoActual) {
+                let nuevoContenido = textoActual.innerHTML;
+
+                if (event.key === 'Backspace') {
+                    event.preventDefault();
+                    if (nuevoContenido.endsWith('<br>')) {
+                        nuevoContenido = nuevoContenido.slice(0, -4);
+                    } else {
+                        nuevoContenido = nuevoContenido.slice(0, -1);
+                    }
+                } else if (event.key === 'Enter') {
+                    event.preventDefault();
+                    nuevoContenido += '<br>';
+                } else if (event.key.length === 1) {
+                    nuevoContenido += event.key.toUpperCase();
+                }
+
+                textoActual.innerHTML = nuevoContenido;
+            }
+        }
+
+        function borrarTodo() {
+            pizarra.innerHTML = '';
+        }
+
+        // Eventos
+        pizarra.addEventListener('click', manejarClick);
+        document.addEventListener('keydown', manejarTecla);
+        document.getElementById('borrar').addEventListener('click', borrarTodo);
+    </script>
+</body>
+</html>
