@@ -1,27 +1,75 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: flex-start; /* Permite que haga scroll si es necesario */
+  min-height: 100vh;
   background-color: #f4f4f4;
   margin: 0;
-  padding: 0;
+  padding: 40px 20px; /* Espaciado arriba/abajo y a los lados */
+  box-sizing: border-box;
 }
 
 .card {
   background: white;
-  padding: 20px;
+  padding: 24px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  max-width: 90%;
+  width: 100%;
+  max-width: 800px; /* Ancho máximo ideal para las 3 imágenes */
+  margin-bottom: 25px; /* Separación entre ambas tarjetas */
+  box-sizing: border-box;
 }
 
+/* Estilos específicos para maquetar el interior de la tarjeta de ajustes */
+.settings-card {
+  align-items: stretch; /* Estira los componentes para que se alineen bien */
+  gap: 20px;
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444;
+}
+
+input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Contenedores de imágenes originales */
 .image-container {
   display: grid;
   gap: 10px;
@@ -29,13 +77,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-.verbs{
+
+.verbs {
   grid-template-columns: repeat(3, 1fr);
 }
-.nouns{
+.nouns {
   grid-template-columns: repeat(4, 1fr);
 }
-.nearFar{
+.nearFar {
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -58,11 +107,12 @@ button {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 30px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 button:hover {
@@ -71,6 +121,10 @@ button:hover {
 
 /* Ajustes para móviles */
 @media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
   .image-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -83,5 +137,10 @@ button:hover {
 
   .random-number {
     font-size: 80px;
+  }
+  
+  .checkbox-group {
+    flex-direction: column;
+    gap: 8px;
   }
 }

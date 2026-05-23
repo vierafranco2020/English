@@ -3,19 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Imágenes Aleatorias</title>
+    <title>Imágenes Aleatorias - Pronombres</title>
     <link rel="stylesheet" href="../styles/generators.css" />
   </head>
   <body>
+    
     <div class="card">
-      <h2 id="tense"></h2>
+      <h2 id="tense">Present Simple</h2>
       <div class="image-container verbs">
         <img id="img1" src="" alt="Imagen Aleatoria 1" />
         <img id="img2" src="" alt="Imagen Aleatoria 2" />
         <img id="img3" src="" alt="Imagen Aleatoria 3" />
       </div>
-      <button onclick="displayRandomImages()">Generar</button>
+      <button onclick="displayRandomImages()">Generate</button>
     </div>
+
+    <div class="card settings-card">
+      <h3 style="margin-top: 0; color: #333;">Settings</h3>
+      
+      <div class="setting-item">
+        <label><strong>Tenses:</strong></label>
+        <div class="checkbox-group tense-scroll">
+          <label><input type="checkbox" class="tense-checkbox" value="Present Simple" checked> Present Simple</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Present Continuous"> Present Continuous</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Future Simple"> Future Simple</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Future Continuous"> Future Continuous</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Would"> Would</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Would be"> Would be</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Can"> Can</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Can be"> Can be</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Could"> Could</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Could be"> Could be</label>
+          <label><input type="checkbox" class="tense-checkbox" value="May"> May</label>
+          <label><input type="checkbox" class="tense-checkbox" value="May be"> May be</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Might be"> Might be</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Might"> Might</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Shall"> Shall</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Shall be"> Shall be</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Should"> Should</label>
+          <label><input type="checkbox" class="tense-checkbox" value="Should be"> Should be</label>
+        </div>
+      </div>
+<div class="setting-item">
+  <label><strong>Left Pronoun:</strong></label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" class="pronoun1-checkbox" value="I" data-imgs="1" checked> I</label>
+    <label><input type="checkbox" class="pronoun1-checkbox" value="you_we_they" data-imgs="2,3,4" checked> You, We, They</label>
+    <label><input type="checkbox" class="pronoun1-checkbox" value="he_she_it" data-imgs="5,6" checked> He, She, It</label>
+  </div>
+</div>
+      <div class="setting-item">
+        <label for="verbs-range"><strong>Verbs:</strong> (<span id="verbs-count-val">54</span>)</label>
+        <input type="range" id="verbs-range" min="5" max="55" value="54" oninput="document.getElementById('verbs-count-val').innerText = this.value">
+      </div>
+
+<div class="setting-item">
+  <label><strong>Right Pronoun:</strong></label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" class="pronoun2-checkbox" value="I" data-imgs="1" checked> I</label>
+    <label><input type="checkbox" class="pronoun2-checkbox" value="you_we_they" data-imgs="2,3,4" checked> You, We, They</label>
+    <label><input type="checkbox" class="pronoun2-checkbox" value="he_she_it" data-imgs="5,6" checked> He, She, It</label>
+  </div>
+</div>
+    </div>
+
     <script src="../scripts/pronouns.js"></script>
   </body>
 </html>

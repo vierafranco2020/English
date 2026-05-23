@@ -4,13 +4,13 @@ function getRandomImage(folder, count) {
 }
 
 function getRandomNumber() {
-  return Math.random() < 0.3 ? 1 : Math.floor(Math.random() * 8) + 2;
+  return Math.random() < 0.5 ? 1 : Math.floor(Math.random() * 98) + 2;
 }
 
 function displayRandomImages() {
   document.getElementById("img1").src = getRandomImage("../imgs/pronouns", 6);
-  document.getElementById("img2").src = getRandomImage("../imgs/nouns", 30);
-  document.getElementById("img3").src = getRandomImage("../imgs/yn", 3);
+  document.getElementById("img2").src = getRandomImage("../imgs/nouns", 45);
+  document.getElementById("img3").src = getRandomImage("../imgs/yn", 2);
   document.getElementById("randomNumber").textContent = getRandomNumber();
 }
 

@@ -7,15 +7,77 @@
     <link rel="stylesheet" href="../styles/generators.css" />
   </head>
   <body>
-    <div class="card">
-      <h2 id="tense"></h2>
-      <div class="image-container verbs">
-        <img id="img1" src="" alt="Imagen Aleatoria 1" />
-        <img id="img3" src="" alt="Imagen Aleatoria 3" />
-        <img id="img2" src="" alt="Imagen Aleatoria 2" />
-      </div>
-      <button onclick="displayRandomImages()">Generar</button>
+  <div class="card">
+    <h2 id="tense">Present Simple</h2>
+    <div class="image-container verbs">
+      <img id="img1" src="" alt="Imagen Aleatoria 1" />
+      <img id="img3" src="" alt="Imagen Aleatoria 3" />
+      <img id="img2" src="" alt="Imagen Aleatoria 2" />
     </div>
-    <script src="../scripts/verbs.js"></script>
-  </body>
+    <button onclick="displayRandomImages()">Generate</button>
+  </div>
+
+  <div class="card settings-card">
+    <h3 style="margin-top: 0; color: #333;">Settings</h3>
+    
+    <div class="setting-item">
+  <label><strong>Tenses:</strong></label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" class="tense-checkbox" value="Present Simple" checked> Present Simple</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Present Continuous"> Present Continuous</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Future Simple"> Future Simple</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Future Continuous"> Future Continuous</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Would"> Would</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Would be"> Would be</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Can"> Can</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Can be"> Can be</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Could"> Could</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Could be"> Could be</label>
+    <label><input type="checkbox" class="tense-checkbox" value="May"> May</label>
+    <label><input type="checkbox" class="tense-checkbox" value="May be"> May be</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Might be"> Might be</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Might"> Might</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Shall"> Shall</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Shall be"> Shall be</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Should"> Should</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Should be"> Should be</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Tomorrow"> Tomorrow</label>
+    <label><input type="checkbox" class="tense-checkbox" value="This Friday"> This Friday</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Next week"> Next week</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Tonight"> Tonight</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Tomorrow morning"> Tomorrow morning</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Next Tuesday /tiusdei/"> Next Tuesday /tiusdei/</label>
+    <label><input type="checkbox" class="tense-checkbox" value="This Wednesday in the afternoon"> This Wednesday in the afternoon</label>
+    <label><input type="checkbox" class="tense-checkbox" value="Tomorrow Night"> Tomorrow Night</label>
+    <label><input type="checkbox" class="tense-checkbox" value="This Weekend"> This Weekend</label>
+    <label><input type="checkbox" class="tense-checkbox" value="On May 12th"> On May 12th</label>
+  </div>
+</div>
+
+    <div class="setting-item">
+      <label for="verbs-range"><strong>Verbs:</strong> (<span id="verbs-count-val">25</span>)</label>
+      <input type="range" id="verbs-range" min="5" max="55" value="25" oninput="document.getElementById('verbs-count-val').innerText = this.value">
+    </div>
+
+    <div class="setting-item">
+      <label><strong>Pronouns:</strong></label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" class="pronoun-checkbox" value="I" data-imgs="1" checked> I</label>
+        <label><input type="checkbox" class="pronoun-checkbox" value="you_we_they" data-imgs="2,3,4" checked> You, We, They</label>
+        <label><input type="checkbox" class="pronoun-checkbox" value="he_she_it" data-imgs="5,6" checked> He, She, It</label>
+      </div>
+    </div>
+
+    <div class="setting-item">
+      <label><strong>Form:</strong></label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" class="yn-checkbox" value="1" checked> Affirmative</label>
+        <label><input type="checkbox" class="yn-checkbox" value="2"> Negative</label>
+        <label><input type="checkbox" class="yn-checkbox" value="3"> Question</label>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts/verbs.js"></script>
+</body>
 </html>
